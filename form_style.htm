@@ -3,11 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nostyle</title>
+    <title>Style</title>
+
+    <style>
+        body{
+            color: #212529;
+            font-size: 16px;
+            background-color: #F8F9FA;
+            margin: 0px 0px;
+            padding-bottom: 100px;
+        }
+
+        .container{
+            margin: auto;
+            width: 940px;
+        }
+
+        @media (max-width: 940px) {
+            .container {
+                width: 100%;
+            }   
+        }
+
+        @media (min-width: 768px) {
+            .head{
+                font-size: 135%;
+            }
+        }
+
+        .head{
+            padding: 48px 0px;
+            text-align: center;
+        }
+
+        #image{
+            margin-top: 0px;
+            margin-bottom: 24px;
+        }
+
+        h2{
+            margin-top: 0px;
+            margin-bottom: 8px;
+            font-weight:400;
+        }
+
+        p{
+            font-size: 20px;
+            margin: 0px 0px 16px;
+            font-weight: lighter;
+        }
+
+        h4{
+            font-size: 24px;
+            font-weight: 400;
+            margin: 0px 0px 16px;
+        }
+
+        input{
+            padding: 6px 12px;
+            width: 94%;
+            height: 22px;
+            border-radius: 5px;
+            border: 1px solid #d0d2d3;
+        }
+
+        input::placeholder{
+            font-size: 16px;
+            position: relative;
+            top: 2px;
+        }
+
+        label{
+            margin: 0px 0px 8px;
+        }
+
+        select{
+            width: 100%;
+            height: 35px;
+            border-radius: 5px;
+            border: 1px solid #d0d2d3;
+        }
+
+        hr{
+            margin: 24px 0px;
+            width: 97%;
+        }
+
+        .form-user-element > div{
+            margin: 16px 0px 0px;
+            padding: 0px 8px;
+        }
+
+        .div-firstname{
+            float: left;
+            width: 46.7%;
+        }
+
+        .div-lastname{
+            float: left;
+            width: 46.7%;
+        }
+
+        .div-country{
+            float: left;
+            width: 33%;
+        }
+
+        .div-state{
+            float: left;
+            width: 33%;
+        }
+
+        .div-zip{
+            float: left;
+            width: 25%;
+        }
+
+        .form-check{
+            margin: 16px 0px 0px;
+            padding: 0px 8px;
+        }
+
+        .form-check > input{
+            width: 15px;
+            border-radius: 5px;
+            border: 1px solid #d0d2d3;
+        }
+
+        .div-cc-name > p{
+            font-size: 14px;
+            color: #6C757D;
+            margin: 0px 0px;
+        }
+
+        .div-cc-name{
+            float: left;
+            width: 47%;
+            margin: 16px 0px 0px;
+            padding: 0px 8px;
+        }
+
+        .div-cc-number{
+            float: left;
+            width: 47%;
+            margin: 16px 0px 20px;
+            padding: 0px 8px;
+        }
+
+        .div-cc-expiration{
+            float: left;
+            width: 24%;
+            margin: 16px 0px 20px;
+            padding: 0px 8px;
+        }
+
+        .div-cc-cvv{
+            float: left;
+            width: 24%;
+            margin: 16px 0px 20px;
+            padding: 0px 8px;
+        }
+
+        .div-request-content{
+            float: left;
+            width: 48.5%;
+        }
+
+        .div-request-date{
+            float: left;
+            width: 48.5%;
+        }
+
+        .form-buttom > input{
+            margin: 16px 0px 20px;
+            height: 40px;
+        }
+
+        #submit{
+            float: left;
+            width: 75%;
+            color: white;
+            font-size: 20px;
+            background-color: #0D6EFD;
+        }
+
+        #reset{
+            float: right;
+            width: 20%;
+            color: white;
+            font-size: 20px;
+            background-color: green;
+        }
+
+        .form-buttom{
+            margin: 48px 0px;
+            padding: 60px 0px 0px;
+        }
+
+        .div-footer{
+            margin: 48px 0px;
+            padding: 48px 0px 0px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .div-footer > p{
+            font-size: 16px;
+            margin: 0px 0px 4px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <div class="head">
+            <div id="image">
+                <img src="image/bootstrap-logo.svg" width="72" height="57"/>
+            </div>
             <h2>Checkout form</h2>
             <p>Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
         </div>
@@ -19,7 +230,7 @@
                     <label for="firstname" class="form-label">First name</label>
                     <input type="text" class="form-control" id="firstname" name="firstname" required/>
                 </div>
-                
+
                 <div class="div-lastname">
                     <label for="lastname" class="form-label">Last name</label>
                     <input type="text" class="form-control" id="lastname" name="lastname" required/>
@@ -68,7 +279,7 @@
 
             </div>
 
-            <hr/>
+            <br/><br/><br/><hr/>
 
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="same-address" name="same-address"/>
@@ -103,7 +314,7 @@
                 <div class="div-cc-name">
                     <label for="cc-name" class="form-label">Name on card</label>
                     <input type="text" class="form-control" id="cc-name" name="cc-name" required/>
-                    <br/>Full name as displayed on card
+                    <br/><p>Full name as displayed on card</p>
                 </div>
                 
                 <div class="div-cc-number">
@@ -122,6 +333,8 @@
                 </div>
             </div>
 
+            <hr/>
+
             <div class="form-request-element">
                 <div class="div-request-content">
                     <label for="request" class="form-label">Request</label><br/>
@@ -134,11 +347,19 @@
             </div>
 
             <div class="form-buttom">
-                <input type="submit" value="submit"/>
-                <input type="reset" value="reset"/>
+                <input type="submit" id="submit" value="submit"/>
+                <input type="reset" id="reset" value="reset"/>
+            </div>
+
+            <div class="div-footer">
+                <p> © 2017–2022 Company Name</p>
+                <a href="#">Privacy</a>
+                <a href="#">Privacy</a>
+                <a href="#">Privacy</a>
             </div>
         </form>
+        
     </div>
-    
+
 </body>
 </html>
