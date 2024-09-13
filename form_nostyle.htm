@@ -37,7 +37,7 @@
 
                 <div class="div-address">
                     <label for="address" class="form-label">Address</label>
-                    <input type="text" class="form-control" id="address" name="address" placeholder="1234 Main St"/>
+                    <input type="text" class="form-control" id="address" name="address" placeholder="1234 Main St" required/>
                 </div>
 
                 <div class="div-address2">
@@ -86,15 +86,15 @@
             
             <div class="div-paymentMethod">
                 <div class="form-check">
-                    <input type="radio" class="form-check-input" id="credit" name="paymentMethod" required/>
+                    <input type="radio" class="form-check-input" id="credit" name="paymentMethod" value="credit" checked/>
                     <label class="form-check-label" for="credit">Credit card</label>
                 </div>
                 <div class="form-check">
-                    <input type="radio" class="form-check-input" id="debit" name="paymentMethod" required/>
+                    <input type="radio" class="form-check-input" id="debit" name="paymentMethod" value="debit"/>
                     <label class="form-check-label" for="debit">Debit card</label>
                 </div>
                 <div class="form-check">
-                    <input type="radio" class="form-check-input" id="paypal" name="paymentMethod" required/>
+                    <input type="radio" class="form-check-input" id="paypal" name="paymentMethod" value="paypal"/>
                     <label class="form-check-label" for="paypal">PayPal</label>
                 </div>
             </div>

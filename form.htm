@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+
+    <style>
+        #input_text{
+            height: 25px;
+            border-radius: 5px;
+            border: 1px solid #d0d2d3;
+            background-color: rgb(236, 250, 255);
+        }
+
+        #button_input{
+            height: 30px;
+            width: 60px;
+            color: white;
+            border-radius: 5px;
+            border: 1px solid #d0d2d3;
+            background-color: rgb(50, 14, 255);
+        }
+
+        #button_remove{
+            height: 30px;
+            width: 60px;
+            color: white;
+            border-radius: 5px;
+            border: 1px solid #d0d2d3;
+            background-color: rgb(93, 206, 0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="head">
+            <h1>Dynamic Web page</h1>
+        </div>
+
+        <div class="content">
+            <div class="input">
+                <input type="text" id="input_text"/>
+                <button onclick="input()" id="button_input">추가</button>
+                <button onclick="remove()" id="button_remove">삭제</button>
+            </div>
+            <div id="list">
+                <ul id="unlist">
+
+                </ul>
+            </div>
+        </div>
+
+        <script>
+
+            function input(){
+                let input_text = document.getElementById("input_text").value;
+                let unlist = document.getElementById("unlist");
+                unlist.innerHTML += "<li>" + input_text + "</li>";
+                document.getElementById("input_text").value = "";
+            }
+
+            function remove(){
+                let unlist = document.getElementById("unlist");
+                unlist.innerHTML = "";
+            }
+        </script>
+    </div>
+</body>
+</html>

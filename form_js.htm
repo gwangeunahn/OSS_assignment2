@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Style</title>
+    <title>Js</title>
 
     <style>
         body{
@@ -211,6 +211,7 @@
             font-size: 16px;
             margin: 0px 0px 4px;
         }
+
     </style>
 </head>
 <body>
@@ -224,21 +225,21 @@
         </div>
     
         <h4>Billing address</h4>
-        <form action="save_ok.php">
+        <form action="save_ok.php" onsubmit="return validateForm()">
             <div class="form-user-element">
                 <div class="div-firstname">
                     <label for="firstname" class="form-label">First name</label>
-                    <input type="text" class="form-control" id="firstname" name="firstname" required/>
+                    <input type="text" class="form-control" id="firstname" name="firstname"/>
                 </div>
 
                 <div class="div-lastname">
                     <label for="lastname" class="form-label">Last name</label>
-                    <input type="text" class="form-control" id="lastname" name="lastname" required/>
+                    <input type="text" class="form-control" id="lastname" name="lastname"/>
                 </div>
 
                 <div class="div-username">
                     <labe for="username" class="form-label">Username</labe>
-                    <input type="text" class="form-control" id="username" name="username" placeholder="Username" required/>
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Username"/>
                 </div>
 
                 <div class="div-email">
@@ -248,7 +249,7 @@
 
                 <div class="div-address">
                     <label for="address" class="form-label">Address</label>
-                    <input type="text" class="form-control" id="address" name="address" placeholder="1234 Main St" required/>
+                    <input type="text" class="form-control" id="address" name="address" placeholder="1234 Main St"/>
                 </div>
 
                 <div class="div-address2">
@@ -258,7 +259,7 @@
 
                 <div class="div-country">
                     <label for="country" class="form-label">Country</label>
-                    <select class="form-select" id="country" name="country" required>
+                    <select class="form-select" id="country" name="country">
                         <option value="">Choose...</option>
                         <option value="United States">United States</option>
                     </select>
@@ -266,7 +267,7 @@
 
                 <div class="div-state">
                     <label for="state" class="form-label">State</label>
-                    <select class="form-select" id="state" name="state" required>
+                    <select class="form-select" id="state" name="state">
                         <option value="">Choose...</option>
                         <option value="California">California</option>
                     </select>
@@ -274,7 +275,7 @@
 
                 <div class="div-zip">
                     <label for="zip" class="form-label">Zip</label>
-                    <input type="text" class="form-control" id="zip" name="zip" required/>
+                    <input type="text" class="form-control" id="zip" name="zip"/>
                 </div>
 
             </div>
@@ -305,7 +306,7 @@
                     <label class="form-check-label" for="debit">Debit card</label>
                 </div>
                 <div class="form-check">
-                    <input type="radio" class="form-check-input" id="paypal" name="paymentMethod" value="paypal" />
+                    <input type="radio" class="form-check-input" id="paypal" name="paymentMethod" value="paypal"/>
                     <label class="form-check-label" for="paypal">PayPal</label>
                 </div>
             </div>
@@ -313,23 +314,23 @@
             <div class="form-card-element">
                 <div class="div-cc-name">
                     <label for="cc-name" class="form-label">Name on card</label>
-                    <input type="text" class="form-control" id="cc-name" name="cc-name" required/>
+                    <input type="text" class="form-control" id="cc-name" name="cc-name"/>
                     <br/><p>Full name as displayed on card</p>
                 </div>
                 
                 <div class="div-cc-number">
                     <label for="cc-number" class="form-label">Credit card number</label>
-                    <input type="text" class="form-control" id="cc-number" name="cc-number" required/>
+                    <input type="text" class="form-control" id="cc-number" name="cc-number"/>
                 </div>
 
                 <div class="div-cc-expiration">
                     <label for="cc-expiration" class="form-label">Expiration</label>
-                    <input type="text" class="form-control" id="cc-expiration" name="cc-expiration" required/>
+                    <input type="text" class="form-control" id="cc-expiration" name="cc-expiration"/>
                 </div>
 
                 <div class="div-cc-cvv">
                     <label for="cc-cvv" class="form-label">CVV</label>
-                    <input type="text" class="form-control" id="cc-cvv" name="cc-cvv" required/>
+                    <input type="text" class="form-control" id="cc-cvv" name="cc-cvv"/>
                 </div>
             </div>
 
@@ -360,6 +361,139 @@
         </form>
         
     </div>
+
+    <script>
+        function validateForm(){
+
+            //firstname
+            let firstname = document.getElementById("firstname");
+            if(firstname.value == ""){
+                alert("Valid first name is required.");
+                firstname.style = "border: 1px solid red;"
+                firstname.focus();
+                return false;
+            }else{
+                firstname.style = "border: 1px solid green;"
+            }
+            
+            //lastname
+            let lastname = document.getElementById("lastname");
+            if(lastname.value == ""){
+                alert("Valid last name is required.");
+                lastname.style = "border: 1px solid red;"
+                lastname.focus();
+                return false;
+            }else{
+                lastname.style = "border: 1px solid green;"
+            }
+
+            //username
+            let username = document.getElementById("username");
+            if(username.value == ""){
+                alert("Your username is required.");
+                username.style = "border: 1px solid red;"
+                username.focus();
+                return false;
+            }else{
+                username.style = "border: 1px solid green;"
+            }
+
+            //address
+            let address = document.getElementById("address");
+            if(address.value == ""){
+                alert("Please enter your shipping address.");
+                address.style = "border: 1px solid red;"
+                address.focus();
+                return false;
+            }else{
+                address.style = "border: 1px solid green;"
+            }
+
+            //country
+            let country = document.getElementById("country");
+            if(country.value == ""){
+                alert("Please select a valid country.");
+                country.style = "border: 1px solid red;"
+                country.focus();
+                return false;
+            }else{
+                country.style = "border: 1px solid green;"
+            }
+
+            //state
+            let state = document.getElementById("state");
+            if(state.value == ""){
+                alert("Please provide a valid state.");
+                state.style = "border: 1px solid red;"
+                state.focus();
+                return false;
+            }else{
+                state.style = "border: 1px solid green;"
+            }
+
+            //zip
+            let zip = document.getElementById("zip");
+            if(zip.value == ""){
+                alert("Zip code required.");
+                zip.style = "border: 1px solid red;"
+                zip.focus();
+                return false;
+            }else{
+                zip.style = "border: 1px solid green;"
+            }
+
+            //cc-name
+            let cc_name = document.getElementById("cc-name")
+            if(cc_name.value == ""){
+                alert("Name on card is required");
+                cc_name.style = "border: 1px solid red;"
+                cc_name.focus();
+                return false;
+            }else{
+                cc_name.style = "border: 1px solid green;"
+            }
+
+            //cc-number
+            let cc_number = document.getElementById("cc-number")
+            if(cc_number.value == ""){
+                alert("Credit card number is required");
+                cc_number.style = "border: 1px solid red;"
+                cc_number.focus();
+                return false;
+            }else{
+                cc_number.style = "border: 1px solid green;"
+            }
+
+            //cc-expiration
+            let cc_expiration = document.getElementById("cc-expiration")
+            if(cc_expiration.value == ""){
+                alert("Expiration date required");
+                cc_expiration.style = "border: 1px solid red;"
+                cc_expiration.focus();
+                return false;
+            }else{
+                cc_expiration.style = "border: 1px solid green;"
+            }
+
+            //cc-cvv
+            let cc_cvv = document.getElementById("cc-cvv")
+            if(cc_cvv.value == ""){
+                alert("Security code required");
+                cc_cvv.style = "border: 1px solid red;"
+                cc_cvv.focus();
+                return false;
+            }else{
+                cc_cvv.style = "border: 1px solid green;"
+            }
+
+            if(confirm("Want to submit?")){
+                alert("Submitted");
+            }else{
+                alert("Cancelled");
+                return false;
+            }
+        }
+    </script>
 
 </body>
 </html>
