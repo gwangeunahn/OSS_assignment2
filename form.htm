@@ -56,7 +56,12 @@
             function input(){
                 let input_text = document.getElementById("input_text").value;
                 let unlist = document.getElementById("unlist");
-                unlist.innerHTML += "<li>" + input_text + "</li>";
+                let word = input_text.split(',');
+                for(let i=0; i<word.length; i++){
+                    if(word[i].trim()){
+                        unlist.innerHTML += "<li>" + word[i].trim() + "</li>";
+                    }
+                }
                 document.getElementById("input_text").value = "";
             }
 
