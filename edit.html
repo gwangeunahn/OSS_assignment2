@@ -32,28 +32,27 @@
           <div class="row g-3">
             <div class="col-12">
               <label for="bookTitle" class="form-label">Book Title</label>
-              <input type="text" class="form-control" id="bookTitle" name="bookTitle" placeholder="" value="">
+              <input type="text" class="form-control" id="bookTitle" name="bookTitle" placeholder="" value="The Great Gatsby">
             </div>
 
             <div class="col-12">
               <label for="author" class="form-label">Author</label>
-              <input type="text" class="form-control" id="author" name="author" placeholder="" value="">
+              <input type="text" class="form-control" id="author" name="author" placeholder="" value="F. Scott Fitzgerald">
             </div>
 
             <div class="col-sm-6">
               <label for="publisher" class="form-label">Publisher</label>
-              <input type="text" class="form-control" id="publisher" name="publisher" placeholder="" value="">
+              <input type="text" class="form-control" id="publisher" name="publisher" placeholder="" value="Scribner Book Company">
             </div>
 
             <div class="col-sm-6">
               <label for="publicationYear" class="form-label">Publication Year</label>
-              <input type="text" class="form-control" id="publicationYear" name="publicationYear" placeholder="0000/00/00" value="">
+              <input type="text" class="form-control" id="publicationYear" name="publicationYear" placeholder="" value="2004/10/01">
             </div>
 
             <div class="col-md-4">
               <label for="categoryGenre" class="form-label">Category/Genre</label>
               <select class="form-select" id="categoryGenre" name="categoryGenre">
-                <option value="">Choose...</option>
                 <option value="fiction">Fiction</option>
                 <optio value="non-fiction">Non-fiction</optio>
                 <option value="autobiography">Autobiography</option>
@@ -65,12 +64,12 @@
 
             <div class="col-md-4">
                 <label for="isbn" class="form-label">ISBN <span class="text-body-secondary">(Optional)</span></label>
-                <input type="text" class="form-control" id="isbn" name="isbn" placeholder="">
+                <input type="text" class="form-control" id="isbn" name="isbn" placeholder="" value="9780743273565 ( 0743273567 )">
             </div>
 
             <div class="col-md-4">
                 <label for="numberofPages" class="form-label">Number of Pages <span class="text-body-secondary">(Optional)</span></label>
-                <input type="number" class="form-control" id="numberofPages" name="numberofPages" placeholder="">
+                <input type="number" class="form-control" id="numberofPages" name="numberofPages" placeholder="" value="180">
             </div>
 
           </div>
@@ -105,8 +104,8 @@
           <hr class="my-4">
 
             <div class="text-end">
-                <button class="btn btn-success" type="submit" value="저장">확인</button>
-                <button class="btn btn-secondary" type="reset" onclick="location.href='index.html'" value="취소">취소</button>
+                <button class="btn btn-success" type="submit">확인</button>
+                <button class="btn btn-secondary" type="reset" onclick="location.href='index.html'">취소</button>
             </div>
         </form>
 
@@ -154,8 +153,11 @@
             $("#categoryGenre").focus();
             return false;
           }
-
-          alert("게시물이 추가됩니다.");
+          if(confirm("게시물을 수정할까요?")){
+                alert("수정되었습니다.");
+            }else{
+                return false;
+            }
         }
     </script>
 
