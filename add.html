@@ -18,16 +18,152 @@
           </a>
     
           <ul class="nav nav-pills">
-            <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+            <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Home</a></li>
             <li class="nav-item"><a href="#" class="nav-link">NoStyle</a></li>
             <li class="nav-item"><a href="#" class="nav-link">Example</a></li>
             <li class="nav-item"><a href="#" class="nav-link">About</a></li>
           </ul>
         </header>
         <h2>Book Add</h2>
+        
         <hr/>
 
+        <form action="save_ok.php" onsubmit="return validateForm()">
+          <div class="row g-3">
+            <div class="col-12">
+              <label for="bookTitle" class="form-label">Book Title</label>
+              <input type="text" class="form-control" id="bookTitle" name="bookTitle" placeholder="" value="">
+            </div>
+
+            <div class="col-12">
+              <label for="author" class="form-label">Author</label>
+              <input type="text" class="form-control" id="author" name="author" placeholder="" value="">
+            </div>
+
+            <div class="col-sm-6">
+              <label for="publisher" class="form-label">Publisher</label>
+              <input type="text" class="form-control" id="publisher" name="publisher" placeholder="" value="">
+            </div>
+
+            <div class="col-sm-6">
+              <label for="publicationYear" class="form-label">Publication Year</label>
+              <input type="text" class="form-control" id="publicationYear" name="publicationYear" placeholder="0000/00/00" value="">
+              <div class="invalid-feedback">
+                Valid Publication Year is required.
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="categoryGenre" class="form-label">Category/Genre</label>
+              <select class="form-select" id="categoryGenre" name="categoryGenre">
+                <option value="">Choose...</option>
+                <option value="fiction">Fiction</option>
+                <optio value="non-fiction">Non-fiction</optio>
+                <option value="autobiography">Autobiography</option>
+                <option value="poetry">Poetry </option>
+                <option value="self-help">Self-help</option>
+                <option value="others">Others</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid Category/Genre.
+              </div>
+            </div>
+
+            <div class="col-md-4">
+                <label for="isbn" class="form-label">ISBN <span class="text-body-secondary">(Optional)</span></label>
+                <input type="text" class="form-control" id="isbn" name="isbn" placeholder="">
+            </div>
+
+            <div class="col-md-4">
+                <label for="numberofPages" class="form-label">Number of Pages <span class="text-body-secondary">(Optional)</span></label>
+                <input type="number" class="form-control" id="numberofPages" name="numberofPages" placeholder="">
+            </div>
+
+          </div>
+
+          <hr class="my-4">
+
+          <h4 class="mb-3">My Rating</h4>
+
+          <div class="my-3">
+            <div class="form-check">
+              <input id="rating_5" name="rating" type="radio" class="form-check-input" value="rating_5" checked="">
+              <label class="form-check-label" for="rating_5">⭐⭐⭐⭐⭐</label>
+            </div>
+            <div class="form-check">
+              <input id="rating_4" name="rating" type="radio" class="form-check-input" value="rating_4">
+              <label class="form-check-label" for="rating_4">⭐⭐⭐⭐</label>
+            </div>
+            <div class="form-check">
+              <input id="rating_3" name="rating" type="radio" class="form-check-input" value="rating_3">
+              <label class="form-check-label" for="rating_3">⭐⭐⭐</label>
+            </div>
+            <div class="form-check">
+              <input id="rating_2" name="rating" type="radio" class="form-check-input" value="rating_2">
+              <label class="form-check-label" for="rating_2">⭐⭐</label>
+            </div>
+            <div class="form-check">
+              <input id="rating_1" name="rating" type="radio" class="form-check-input" value="rating_1">
+              <label class="form-check-label" for="rating_1">⭐</label>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+            <div class="text-end">
+                <button class="btn btn-success" type="submit" value="저장">확인</button>
+                <button class="btn btn-secondary" type="reset" onclick="location.href='index.html'" value="취소">취소</button>
+            </div>
+        </form>
+
     </div>
+
+    <script>
+        function validateForm(){
+
+          //bookTitle
+          let bookTitle = $("#bookTitle").val();
+          if(bookTitle === "" || bookTitle == "undefined"){
+            alert("Valid Book Title is required.");
+            $("#bookTitle").focus();
+            return false;
+          }
+
+          //Author
+          let author = $("#author").val();
+          if(author === "" || author == "undefined"){
+            alert("Valid Author is required.");
+            $("#author").focus();
+            return false;
+          }
+
+          //Publisher
+          let publisher = $("#publisher").val();
+          if(publisher === "" || publisher == "undefined"){
+            alert("Valid Publisher is required.");
+            $("#publisher").focus();
+            return false;
+          }
+
+          //Publication Year
+          let publicationYear = $("#publicationYear").val();
+          if(publicationYear === "" || publicationYear == "undefined"){
+            alert("Valid Publication Year is required.");
+            $("#publicationYear").focus();
+            return false;
+          }
+
+          //Category/Genre
+          let categoryGenre = $("#categoryGenre").val();
+          if(categoryGenre === "" || categoryGenre == "undefined"){
+            alert("Valid Category/Genre is required.");
+            $("#categoryGenre").focus();
+            return false;
+          }
+
+          alert("게시물이 추가됩니다.");
+        }
+    </script>
 
 </body>
 </html>
