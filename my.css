@@ -1,3 +1,19 @@
+.td_title{
+    cursor: pointer;
+}
+
+.td_title:hover{
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
 @media only screen and (max-width : 640px){
-    
+    button{
+        width: 100%;
+        margin: 5px 0px 5px;
+    } 
+
+    .nav-item{
+        display: none;
+    }
 }
