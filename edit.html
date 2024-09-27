@@ -154,6 +154,15 @@
             $("#categoryGenre").focus();
             return false;
           }
+
+          //numberofpages
+          let numberofPages = $("#numberofPages").val();
+          if(numberofPages < 0){
+            alert("Valid number of Pages must be positive.");
+            $("#numberofPages").focus();
+            return false;
+          }
+
           if(confirm("게시물을 수정할까요?")){
                 alert("수정되었습니다.");
             }else{
