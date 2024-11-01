@@ -69,10 +69,10 @@
             </div>
 
             <div class="col-3" style="margin-top: 25px;">
-                <button class="btn btn-success" onclick="getDataFromJSONFile()">Load</button>
+                <button class="btn btn-primary" onclick="getDataFromJSONFile()">Load</button>
                 <button class="btn btn-success" onclick="createDataToJSONFile()">Add</button>
-                <button class="btn btn-success" onclick="updateDataToJSONFile()">Update</button>
-                <button class="btn btn-success" onclick="deleteDataToJSONFile()">Delete</button>
+                <button class="btn btn-secondary" onclick="updateDataToJSONFile()">Update</button>
+                <button class="btn btn-danger" onclick="deleteDataToJSONFile()">Delete</button>
             </div>
         </div>
 
@@ -163,7 +163,7 @@
             xhr.send(JSON.stringify(data));
             xhr.onload = () =>{
                 if(xhr.status == 201){
-                    alert("Created");
+                    alert("Added");
                     getDataFromJSONFile();
                 }
             }
