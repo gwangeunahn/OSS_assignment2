@@ -1,0 +1,74 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "publisher": "Scribner Book Company",
+      "publicationdate": "2004-10-01"
+    },
+    {
+      "id": "2",
+      "title": "The Selfish Gene",
+      "author": "Richard Dawkins",
+      "publisher": "Oxford University Press, USA",
+      "publicationdate": "2016-08-01"
+    },
+    {
+      "id": "3",
+      "title": "Grit",
+      "author": "Duckworth, Angela",
+      "publisher": "Scribner Book Company",
+      "publicationdate": "2018-08-21"
+    },
+    {
+      "id": "4",
+      "title": "Atomic Habits",
+      "author": "James Clear",
+      "publisher": "Random House UK Ltd",
+      "publicationdate": "2017-08-24"
+    },
+    {
+      "id": "5",
+      "title": "The Catcher in the Rye",
+      "author": "Salinger, J. D.",
+      "publisher": "Back Bay Books",
+      "publicationdate": "2001-01-30"
+    },
+    {
+      "id": "6",
+      "title": "Sapiens",
+      "author": "Yuval Noah Harari",
+      "publisher": "Harper Perennial",
+      "publicationdate": "2018-05-15"
+    },
+    {
+      "id": "7",
+      "title": "Justice",
+      "author": "Michael J. Sandel",
+      "publisher": "Farrar Straus Giroux",
+      "publicationdate": "2010-08-17"
+    },
+    {
+      "id": "8",
+      "title": "The Old Man and the Sea",
+      "author": "Ernest Hemingway",
+      "publisher": "Scribner Book Company",
+      "publicationdate": "1995-05-05"
+    },
+    {
+      "id": "9",
+      "title": "Demian",
+      "author": "Hermann Hesse",
+      "publisher": "Penguin Group",
+      "publicationdate": "2013-07-30"
+    },
+    {
+      "id": "10",
+      "title": "Aimez-vous Brahms",
+      "author": "Francoise Sagan",
+      "publisher": "Pocket",
+      "publicationdate": "2009-05-01"
+    }
+  ]
+}
