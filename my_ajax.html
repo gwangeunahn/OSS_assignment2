@@ -154,6 +154,10 @@
             xhr.open("POST", "http://localhost:3000/books");
             xhr.setRequestHeader("content-type", "application/json;charset=UTF-8");
 
+            if(!validation()){
+              return false;
+            }
+
             let data = {title:$("#title").val(),
                         author:$("#author").val(),
                         publisher:$("#publisher").val(),
@@ -174,6 +178,10 @@
             const xhr = new XMLHttpRequest();
             xhr.open("PUT", "http://localhost:3000/books/" + id);
             xhr.setRequestHeader("content-type", "application/json;charset=UTF-8");
+
+            if(!validation()){
+              return false;
+            }
 
             let data =  {title:$("#title").val(),
                         author:$("#author").val(),
@@ -203,6 +211,27 @@
                 }
             }
             xhr.send();
+        }
+
+        function validation(){
+          if($("#title").val()==""){
+            alert("Valid title is required.");
+            $("#title").focus();
+            return false;
+          }else if($("#author").val()==""){
+            alert("Valid author is required.");
+            $("#author").focus();
+            return false;
+          }else if($("#publisher").val()==""){
+            alert("Valid publisher is required.");
+            $("#publisher").focus();
+            return false;
+          }else if($("#publicationdate").val()==""){
+            alert("Valid publicationdate is required.");
+            $("#publicationdate").focus();
+            return false;
+          }
+          return true;
         }
     </script>
 
